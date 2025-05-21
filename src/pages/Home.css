@@ -1,0 +1,9 @@
+.home{
+    background:linear-gradient(to right,#0f2027, #203a43, #2c5364)
+}
+.btn:hover{
+   background-color: #f6f9fa !important;
+   color: rgb(44, 146, 172)!important;
+   transform: scale(1.05);
+   transition: 0.3s ;
+}
