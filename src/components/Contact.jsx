@@ -30,7 +30,7 @@ function Contact() {
        alert("Plesse Enter a valid name Letters only")
        return;
   }
-  fetch('http://localhost:5000/api/contact',{
+  fetch('https://revathi-portfolio-backend.onrender.com/',{
     method:'POST',
     headers:{'Content-Type': 'application/json'},
     body:JSON.stringify(formData)
