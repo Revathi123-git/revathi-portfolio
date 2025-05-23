@@ -30,21 +30,23 @@ function Contact() {
        alert("Plesse Enter a valid name Letters only")
        return;
   }
-  fetch('https://revathi-portfolio-backend.onrender.com/',{
-    method:'POST',
-    headers:{'Content-Type': 'application/json'},
-    body:JSON.stringify(formData)
-  }).then(res =>res.json())
-    .then(data =>{
-      if(data.message){
-        setSubmitted(true)
-      }else{
-        alert("Something went wrong")
-      }
-    }).catch(error=>{
-      console.error("Error submitting contact form: ",error)
-       alert("Server error, please try again later.");
-    })
+  fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(formData)
+})
+  .then(res => res.json())
+  .then(data => {
+    if (data.message) {
+      setSubmitted(true);
+    } else {
+      alert("Something went wrong");
+    }
+  })
+  .catch(error => {
+    console.error("Error submitting contact form: ", error);
+    alert("Server error, please try again later.");
+  });
 
 
   }
